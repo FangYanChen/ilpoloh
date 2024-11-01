@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="{% static 'main/images' %}" alt="">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" url="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <title>Аренда Аккаунтов Mobile Legends</title>
+</head>
+<body> 
+    <header>
+        <div class="header-nav">
+            <ul class="flex-center">
+                <img src="{% static 'main/images/mlbb_logo.png' %}" alt="logo" class="logo">
+                <li class="menu__list-item dropdown">
+                    <a href="#" class="dropdown-btn">Продукты <span class="arrow">&#9660;</span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Выдать Аккаунт</a></li>
+                        <li><a href="#">Взять Аккаунт</a></li>
+                        <li><a href="#">Купить Аккаунт</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu__list-item">
+                    <a href="#">Отзывы</a>
+                </li>
+                <li class="menu__list-item">
+                    <a href="#">Партнерам</a>
+                </li>
+                <li class="menu__list-item">
+                    <a href="#">Скидки</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="header-content">
+            <h1>Страхование путешественников</h1>
+            <h3>Полис, который действительно работает</h3>
+            
+        </div>
+        <!--блок по середине-->
+        <div class="block-interface">
+            <div class="block-field">
+                <input type="text" placeholder="что берем?" />
+            </div>
+            <div class="block-field">
+                <input type="date" />
+            </div>
+            <div class="block-field">
+                <input type="date" />
+            </div>
+            <div class="block-field">
+                <select>
+                    <option>100</option>
+                    <option>200</option>
+                    <option>500</option>
+                </select>
+            </div>
+            
+
+        </div>
+        <div class="button">
+            <button class="block-button">Узнать стоимость</button>
+        </div>
+    </header>
+
+    <main>
+        {% for item in article %}
+            <h1>{{ item.title }}</h1>
+            {{item.text}}
+      {% endfor %}
+        <div class="block-container">
+            <!-- 1 блок: текст:фото -->
+            <div class="block">
+                <div class="text">
+                    <h2>LanN</h2>
+                    
+                </div>
+                <div class="image">
+                    <img src="{% static 'main/images/joy.jpeg' %}" alt="Изображение 1">
+                </div>
+            </div>
+            
+            <!-- 2 блок: фото:текст -->
+            <div class="block reverse">
+                <div class="image">
+                    <img src="{% static 'main/images/moskow.jpeg' %}" alt="Изображение 2">
+                </div>
+                <div class="text">
+                    <h2>KING</h2>
+                </div>
+            </div>
+            
+            <!-- 3 блок: текст:фото-->
+            <div class="block">
+                <div class="text">
+                    <h2>A3NW</h2>
+                </div>
+                <div class="image">
+                    <img src="{% static 'main/images/Edith.jpeg' %}" alt="Изображение 3">
+                </div>
+            </div>
+            <!-- 4 блок: фото:текст -->
+            <div class="block reverse">
+                <div class="image">
+                    <img src="{% static 'main/images/Xavier.jpeg' %}" alt="Изображение 4">
+                </div>
+                <div class="text">
+                    <h2>Rohan_23B</h2>
+                </div>
+            </div>
+            <!-- 5 блок: текст:фото-->
+            <div class="block">
+                <div class="text">
+                    <h2>ILPO</h2>
+                </div>
+                <div class="image">
+                    <img src="{% static 'main/images/terizla.jpeg' %}" alt="Изображение 5">
+                </div>
+            </div>
+        </div>
+        <div class="text-between">
+            <h2>text</h2>
+        </div>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-number"><b>1</b></div>
+                <div class="card-icon">
+                    <img src="{% static 'main/images/Frame.svg' %}" alt="Calculator Icon">
+                </div>
+                <div class="card-text">
+                    Рассчитайте онлайн<br>стоимость полиса
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number"><b>2</b></div>
+                <div class="card-icon">
+                    <img src="{% static 'main/images/Frame-2.svg' %}" alt="Calculator Icon">
+                </div>
+                <div class="card-text">
+                    Рассчитайте онлайн<br>стоимость полиса
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number"><b>3</b></div>
+                <div class="card-icon">
+                    <img src="{% static 'main/images/Frame-3.svg' %}" alt="Calculator Icon">
+                </div>
+                <div class="card-text">
+                    Рассчитайте онлайн<br>стоимость полиса
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number"><b>4</b></div>
+                <div class="card-icon">
+                    <img src="{% static 'main/images/Frame-4.svg' %}" alt="Calculator Icon">
+                </div>
+                <div class="card-text">
+                    Рассчитайте онлайн<br>стоимость полиса
+                </div>
+            </div>
+        
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="links">
+                <div class="links_menu">
+                    <h4>Информационный центр</h4>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                    </ul>
+                </div>
+                <div class="links_menu">
+                    <h4>Продукты</h4>
+                    <ul>
+                        <li><a href="#">Страховка для Шенгена</a></li>
+                        <li><a href="#">Страховка для России</a></li>
+                        <li><a href="#">Страховка в страны</a></li>
+                        <li><a href="#">Горнолыжная страховка</a></li>
+                        <li><a href="#">Годовая страховка</a></li>
+                    </ul>
+                </div>
+                <div class="links_menu">
+                    <h4>Документы</h4>
+                    <ul>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Политика обработки данных</a></li>
+                        <li><a href="#">Политика информационной безопасности </a></li>
+                    </ul>
+                </div>
+                <div class="links_menu">
+                    <h4>Связаться с нами</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tik tok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+</body>
+</html>

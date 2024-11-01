@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    max-width: 150px;
+}
+.limit {
+    max-width: 100%;
+    margin: 0 auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: gray;
+}
+header {
+    background-image: url(images/background.png);
+    background-size: cover;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+.header-nav {
+    width: 70%;
+    flex: 5;
+    padding: 20px 34px;
+    margin: 0 auto;
+    height: fit-content; 
+}
+.dropdown {
+    position: relative;  /*дочерний элемент снизу будет*/
+}
+
+.dropdown-btn {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.header-nav ul li .dropdown-content {
+    display: none; /* Изначально скрывает меню */
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Пункты выпадающего меню */
+.dropdown-content li {
+    padding: 12px 16px;
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #575757;
+}
+
+/* Показывает меню при наведении */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.header-nav ul {
+    display: flex;
+    justify-content: space-around;                                           /*тут все понятно*/
+    align-items: end;
+    list-style: none;
+}
+
+.header-nav ul li {
+    margin: 0 20px;                                                                 /*тут тоже*/
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;                                                          /*тут тоже*/
+    font-size: 18px;
+}
+.header-nav a:hover {
+    text-decoration: underline;                                                     /*тут тоже*/
+}
+.header-content {
+    text-align: center;
+    color: #fff;                                                                   /*тут тоже*/
+    margin-top: 150px;  
+    margin-bottom: 50px;
+}
+
+.block-interface {
+    display: flex;
+    justify-content: center;                                                          /*тут тоже*/
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /*тут короче тень*/
+    gap: 10px;
+    z-index: 2;                                                   /*это хз, забыл*/
+    margin:   auto;      /*центрирует элем. в родителе*/
+    flex-wrap: wrap; /* элементы на след. строку */
+}
+.block-field {
+    flex: 1;        /*чтобы каждый занимал одинаковое кол-во места*/
+}
+.block-field input, .block-field select {       /*там где надо писать чета*/
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;                                       /*тут все понятно*/
+    border-radius: 4px;
+    width: 100%;
+}
+header .button {
+    min-height: 10%;
+    display: flex;
+    justify-content: center;
+}
+header button {
+    min-height: 70px ;
+    background-color: pink;
+    width: 20%;
+    margin-top: 50px;
+    font-size: large;
+}
+.block-container {
+    max-width: 70%;
+    margin: 0 auto; /*Центрируем по горизонтали*/
+}
+
+.block {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; /*по вертикали */
+    margin: 100px 0; /*Отступы*/
+}
+.block .text {
+    flex: 1; /* текст = 1 часть пространства */
+    padding: 10px;
+    font-size: 18px;
+}
+.block .image {
+    flex: 1; /* фотка = 1 часть пространства */
+    display: flex;
+    justify-content: center; /* Центрируем фото в блоке */
+    padding: 10px;
+}
+.block .image img {
+    max-width: 100%; 
+    height: auto;
+}
+.text-between {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+
+    margin: 0 auto; /*Центрируем по горизонтали*/
+}
+
+/* Общий стиль для карточки */
+.card {
+    width: 295px;
+    height: 295px; 
+    background-color: #f4f1fd; /*Светло-фиолетовый*/
+    border-radius: 10px; /* Скругленные углы */
+    text-align: center; /* Центрируем текст и иконку */
+    padding: 20px;
+    margin: 20px;
+    position: relative; /* Для позиционирования номера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для придания объема */
+}
+
+/* Большой номер на заднем плане */
+.card-number {
+    font-size: 120px;
+    color: rgba(189, 149, 223, 0.3); /* Светло-фиолетовый цвет с прозрачностью */
+    position: absolute; /* Позиционируем номер поверх фона */
+    top: 10px;
+    left: 20px;
+    z-index: 0; /*номер на задний план */
+}
+
+/* Стиль для иконки */
+.card-icon {
+    margin-top: 60px; /* Отступ сверху для иконки */
+    z-index: 1; /* Иконка поверх номера */
+}
+
+.card-icon img {
+    width: 100px; /* Размер иконки (можно изменить) */
+    height: auto;
+}
+
+/* Стиль текста */
+.card-text {
+    font-size: 18px;
+    color: #333; /* Темный цвет текста */
+    z-index: 1; /* Текст поверх номера */
+    margin-top: 20px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+/*------------------------------------------------------Для Планшетов-----------------------------------------------------------*/
+@media (max-width: 766px) {
+    .header-nav {
+        width: 90%; 
+        padding: 10px; 
+    }
+
+    .header-content {
+        margin-top: 100px; /* меньше верхний отступ */
+        margin-bottom: 30px; /* меньше нижний */
+    }
+
+    .block-interface {
+        flex-direction: column; /*меняем направление на колонку  */
+        width: 60%; /* ширина больше*/
+    }
+
+    .block {
+        flex-direction: column; /*меняем направление на колонку */
+        margin: 50px 0; /* меншье отступы */
+    }
+
+    .block-container {
+        max-width: 90%; /* ширина больше*/
+    }
+
+    .card {
+        width: 90%; /* ширина больше*/
+        height: auto; /* Убираем фиксированную высоту для адаптивности */
+        margin: 10px 0; /* меньеш отступы */
+    }
+
+    .card-number {
+        font-size: 80px; /* меньше размер */
+    }
+
+    .card-text {
+        font-size: 16px; /* меньше размер */
+    }
+}
+
+/*-----------------------------------------------------это короче для телефона------------------------------------------------*/
+@media (max-height: 800) {
+    header {
+        height:1500px;
+    }
+}
+@media (max-width: 480px) {
+    header {
+        background-image: url(images/Zhuxin\ \(Lantern\ of\ Spirits\).jpeg);
+    }
+
+    header button {
+
+        width: 50%; /* ширина больше*/
+        font-size: medium; /* меньше размер */
+    }
+
+    .header-nav ul {
+        flex-direction: column;  /*меняем направление на колонку */
+        align-items: center;
+    }
+
+    .header-nav ul li {
+        margin: 10px 0; /* меншье отступы */
+    }
+
+    h1 {
+        font-size: 24px; /* меньше размер */
+    }
+
+    h3 {
+        font-size: 18px; /* меньше размер */
+    }
+    
+    .text-between {
+        padding-bottom: 10px; /* меншье отступы */
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.links{
+	display: flex;
+	flex-wrap: wrap;
+}
+footer ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.links_menu{
+   width: 25%;
+   padding: 0 15px;
+}
+.links_menu h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.links_menu h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.links_menu ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.links_menu ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.links_menu ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.links_menu .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.links_menu .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+@media(max-width: 767px){
+  .links_menu{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .links_menu{
+    width: 100%;
+}
+}
